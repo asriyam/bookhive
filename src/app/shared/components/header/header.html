@@ -1,28 +1,24 @@
-<header class="w-full bg-[#faf8f6] border-b border-gray-200">
+<header class="border-b border-gray-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16">
             <!-- Logo Section -->
-            <div class="flex-shrink-0">
+            <div class="shrink-0">
                 <h1 class="text-2xl font-bold text-[--color-text-default] cursor-pointer hover:opacity-75 transition-opacity"
                     (click)="navigateToHome()">BookHive</h1>
             </div>
 
             <!--Navigation Menu - Desktop -->
             <nav class="hidden md:flex items-stretch space-x-1">
-                <a (click)="navigateToHome()"
-                    class="px-4 py-2 rounded-md text-[16px] font-medium text-[--color-text-default] hover:bg-[--colormastroke-masthead-hover] hover:text-[--color-text-hover] transition-colors duration-200 cursor-pointer flex items-center h-full">
+                <a (click)="navigateToHome()" class="cursor-pointer">
                     Home
                 </a>
-                <a
-                    class="px-4 py-2 rounded-md text-[16px] font-medium text-[--color-text-default] hover:bg-[--colormastroke-masthead-hover] hover:text-[--color-text-hover] transition-colors duration-200 cursor-pointer flex items-center h-full">
+                <a class="cursor-pointer">
                     My Books
                 </a>
-                <a
-                    class="px-4 py-2 rounded-md text-[16px] font-medium text-[--color-text-default] hover:bg-[--colormastroke-masthead-hover] hover:text-[--color-text-hover] transition-colors duration-200 cursor-pointer flex items-center h-full">
+                <a class="cursor-pointer">
                     Browse
                 </a>
-                <a
-                    class="px-4 py-2 rounded-md text-[16px] font-medium text-[--color-text-default] hover:bg-[--colormastroke-masthead-hover] hover:text-[--color-text-hover] transition-colors duration-200 cursor-pointer flex items-center h-full">
+                <a class="cursor-pointer">
                     Community
                 </a>
             </nav>
@@ -33,9 +29,9 @@
                 <div class="relative hidden md:block">
                     <input type="text" placeholder="Search books" [value]="searchQuery()"
                         (input)="searchQuery.set($event.target.value)" (keypress)="onSearchKeyPress($event)"
-                        class="w-64 px-4 py-2 pr-10 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[--color-tborder-e-text-default] focus:border-transparent" />
+                        class="search-input" />
                     <button (click)="onSearch()"
-                        class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors"
+                        class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors pointer-events-none"
                         aria-label="Search">
                         <ng-icon name="heroMagnifyingGlass" size="20"></ng-icon>
                     </button>
@@ -59,21 +55,17 @@
         <!-- Mobile Menu -->
         @if (isMenuOpen()) {
         <nav class="md:hidden border-t border-gray-200 py-4">
-            <div class="flex flex-col space-y-2">
-                <a (click)="navigateToHome(); closeMenu()"
-                    class="px-4 py-2 rounded-md text-[16px] font-medium text-[--color-text-default] hover:bg-[--colormastroke-masthead-hover] hover:text-[--color-text-hover] transition-colors duration-200 cursor-pointer block h-full">
+            <div class="flex flex-col space-y-0">
+                <a (click)="navigateToHome(); closeMenu()" class="cursor-pointer block">
                     Home
                 </a>
-                <a (click)="closeMenu()"
-                    class="px-4 py-2 rounded-md text-[16px] font-medium text-[--color-text-default] hover:bg-[--colormastroke-masthead-hover] hover:text-[--color-text-hover] transition-colors duration-200 cursor-pointer block h-full">
+                <a (click)="closeMenu()" class="cursor-pointer block">
                     My Books
                 </a>
-                <a (click)="closeMenu()"
-                    class="px-4 py-2 rounded-md text-[16px] font-medium text-[--color-text-default] hover:bg-[--colormastroke-masthead-hover] hover:text-[--color-text-hover] transition-colors duration-200 cursor-pointer block h-full">
+                <a (click)="closeMenu()" class="cursor-pointer block">
                     Browse
                 </a>
-                <a (click)="closeMenu()"
-                    class="px-4 py-2 rounded-md text-[16px] font-medium text-[--color-text-default] hover:bg-[--colormastroke-masthead-hover] hover:text-[--color-text-hover] transition-colors duration-200 cursor-pointer block h-full">
+                <a (click)="closeMenu()" class="cursor-pointer block">
                     Community
                 </a>
             </div>
