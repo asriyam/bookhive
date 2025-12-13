@@ -4,7 +4,7 @@ header {
 
 header nav a {
   padding: 0.5rem 1rem;
-  font-weight: 500;
+  font-weight: 400;
   color: var(--color-text-default);
   font-size: 1rem;
   transition: background-color 200ms ease, color 200ms ease;
