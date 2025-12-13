@@ -1,0 +1,83 @@
+<header class="w-full bg-[--color-masthead-bg] border-b border-gray-200 ">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+            <!-- Logo Section -->
+            <div class="flex-shrink-0">
+                <h1 class="text-2xl font-bold text-[--color-text-default] cursor-pointer hover:opacity-75 transition-opacity"
+                    (click)="navigateToHome()">BookHive</h1>
+            </div>
+
+            <!--Navigation Menu - Desktop -->
+            <nav class="hidden md:flex items-center space-x-1">
+                <a (click)="navigateToHome()"
+                    class="px-4 py-2 rounded-md text-sm font-medium text-[--color-text-default] hover:bg-[--colormastroke-masthead-hover] hover:text-[--color-text-hover] transition-colors duration-200 cursor-pointer">
+                    Home
+                </a>
+                <a
+                    class="px-4 py-2 rounded-md text-sm font-medium text-[--color-text-default] hover:bg-[--colormastroke-masthead-hover] hover:text-[--color-text-hover] transition-colors duration-200 cursor-pointer">
+                    My Books
+                </a>
+                <a
+                    class="px-4 py-2 rounded-md text-sm font-medium text-[--color-text-default] hover:bg-[--colormastroke-masthead-hover] hover:text-[--color-text-hover] transition-colors duration-200 cursor-pointer">
+                    Browse
+                </a>
+                <a
+                    class="px-4 py-2 rounded-md text-sm font-medium text-[--color-text-default] hover:bg-[--colormastroke-masthead-hover] hover:text-[--color-text-hover] transition-colors duration-200 cursor-pointer">
+                    Community
+                </a>
+            </nav>
+
+            <!-- Search and Profile Section -->
+            <div class="flex items-center space-x-4">
+                <!-- Search Box -->
+                <div class="relative hidden md:block">
+                    <input type="text" placeholder="Search books" [value]="searchQuery()"
+                        (input)="searchQuery.set($event.target.value)" (keypress)="onSearchKeyPress($event)"
+                        class="w-64 px-4 py-2 pr-10 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[--color-tborder-e-text-default] focus:border-transparent" />
+                    <button (click)="onSearch()"
+                        class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors"
+                        aria-label="Search">
+                        <ng-icon name="heroMagnifyingGlass" size="20"></ng-icon>
+                    </button>
+                </div>
+
+                <!-- User profile icon -->
+                <button
+                    class="p-2 rounded-md text-[--color-text-default] hover:bg-[--color-maccent-masthead-hover] hover:text-[--color-text-hover] transition-colors duration-200"
+                    aria-label="User profile">
+                    <ng-icon name="heroUserCircle" size="24"></ng-icon>
+                </button>
+
+                <!-- Hamburger Menu button - Mobile Only-->
+                <button
+                    class="md:hidden p-2 rounded-md text-[--color-text-default] hover:bg-[--color-maccent-masthead-hover] hover:text-[--color-text-hover] transition-colors duration-200"
+                    (click)="toggleMenu()" aria-label="Toggle menu">
+                    <ng-icon name="heroBars3" size="24"></ng-icon>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        @if (isMenuOpen()) {
+        <nav class="md:hidden border-t border-gray-200 py-4">
+            <div class="flex flex-col space-y-2">
+                <a (click)="navigateToHome(); closeMenu()"
+                    class="px-4 py-2 rounded-md text-sm font-medium text-[--color-text-default] hover:bg-[--colormastroke-masthead-hover] hover:text-[--color-text-hover] transition-colors duration-200 cursor-pointer block">
+                    Home
+                </a>
+                <a (click)="closeMenu()"
+                    class="px-4 py-2 rounded-md text-sm font-medium text-[--color-text-default] hover:bg-[--colormastroke-masthead-hover] hover:text-[--color-text-hover] transition-colors duration-200 cursor-pointer block">
+                    My Books
+                </a>
+                <a (click)="closeMenu()"
+                    class="px-4 py-2 rounded-md text-sm font-medium text-[--color-text-default] hover:bg-[--colormastroke-masthead-hover] hover:text-[--color-text-hover] transition-colors duration-200 cursor-pointer block">
+                    Browse
+                </a>
+                <a (click)="closeMenu()"
+                    class="px-4 py-2 rounded-md text-sm font-medium text-[--color-text-default] hover:bg-[--colormastroke-masthead-hover] hover:text-[--color-text-hover] transition-colors duration-200 cursor-pointer block">
+                    Community
+                </a>
+            </div>
+        </nav>
+        }
+    </div>
+</header>

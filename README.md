@@ -1,59 +1,83 @@
-# Bookhive
+# 📚 BookHive
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.9.
+A GoodReads-style social reading platform built with modern technologies.
 
-## Development server
+## 🚀 Tech Stack
 
-To start a local development server, run:
+- **Frontend:** Angular 17+, Tailwind CSS
+- **Backend:** .NET 8 Web API (Phase 2+)
+- **Database:** Azure SQL, Cosmos DB (Phase 3+)
+- **Cloud:** Microsoft Azure
+- **CI/CD:** GitHub Actions → Azure Static Web Apps
 
+## 📋 Features
+
+### Phase 1 (Current)
+- [x] Book catalog browsing
+- [x] Search by title, author, ISBN
+- [x] Genre filtering
+- [x] Book detail pages
+- [x] Responsive design
+
+### Phase 2+ (Planned)
+- [ ] User authentication
+- [ ] Personal bookshelves
+- [ ] Reading progress tracker
+- [ ] Ratings and reviews
+- [ ] Social features
+
+## 🛠️ Getting Started
+
+### Prerequisites
+- Node.js 18+
+- Angular CLI 17+
+- Git
+
+### Installation
 ```bash
+# Clone the repository
+git clone https://github.com/yourusername/bookhive.git
+
+# Navigate to project
+cd bookhive
+
+# Install dependencies
+npm install
+
+# Start development server
 ng serve
+
+# Open browser at http://localhost:4200
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## 📁 Project Structure
+bookhive/
+├── src/app/
+│   ├── core/           # Singleton services, guards, interceptors
+│   ├── shared/         # Reusable components, pipes, directives
+│   ├── features/       # Feature modules (books, authors, genres)
+│   ├── layout/         # Layout components
+│   └── app.routes.ts   # Application routing
+├── src/assets/         # Static assets and mock data
+├── src/environments/   # Environment configurations
+└── tailwind.config.js  # Tailwind CSS configuration
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
+## 🔧 Available Scripts
 ```bash
-ng generate component component-name
+npm start        # Start dev server
+npm run build    # Production build
+npm test         # Run unit tests
+npm run lint     # Lint code
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## 🌐 Deployment
 
-```bash
-ng generate --help
-```
+This project is configured for deployment to Azure Static Web Apps via GitHub Actions.
 
-## Building
+## 📄 License
 
-To build the project run:
+MIT License - see LICENSE file for details.
 
-```bash
-ng build
-```
+## 👤 Author
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Srikanth - [GitHub](https://github.com/asriyam)

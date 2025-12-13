@@ -1,1 +1,125 @@
 /* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+
+@theme {
+    --color-cream: #F9F8F5;
+    --color-masthead-bg: #FAF8F6;
+    --color-masthead-hover: #32362D;
+    --colormastroke-masthead-hover: #32362D;
+    --color-maccent-masthead-hover: #32362D;
+    --color-tborder-e-text-default: #382110;
+    --color-text-default: #382110;
+    --color-text-hover: #f2f2f2;
+}
+
+body {
+    background-color: var(--color-cream);
+    font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+}
+
+@layer base {
+    /* Global Link Styles */
+    a {
+        @apply bg-transparent text-[#00635D] no-underline;
+    }
+
+    a:focus {
+        @apply outline outline-1 outline-dotted;
+    }
+
+    a:active,
+    a:hover {
+        @apply outline-0 underline;
+    }
+
+    /* Heading Styles */
+    h1 {
+        @apply text-2xl text-gray-900 font-normal leading-[1.25];
+    }
+
+    h2 {
+        @apply text-[22px] text-gray-900 font-normal leading-[1.25];
+    }
+
+    h3 {
+        @apply text-sm text-gray-900 font-bold leading-[1.15] my-3 uppercase;
+    }
+
+    h4 {
+        @apply text-base text-gray-900 font-normal my-3;
+    }
+
+    h5 {
+        @apply text-sm text-gray-900 font-bold my-3 leading-[1.15];
+    }
+
+    h6 {
+        @apply text-xs;
+    }
+
+    /* Typography */
+    b,
+    strong {
+        @apply font-bold;
+    }
+
+    abbr[title] {
+        @apply border-b border-dotted;
+    }
+
+    /* Semantic Elements */
+    main {
+        @apply block;
+    }
+}
+
+@layer components {
+    .gr-h3 {
+        @apply text-sm text-gray-900 font-bold leading-[1.15] my-3 uppercase;
+    }
+
+    /* Book Shelf Styles - Shared across components */
+    .shelf-container {
+        @apply flex flex-col gap-5;
+    }
+
+    .book-item {
+        @apply flex gap-4 p-3 rounded;
+    }
+
+    .book-image-wrapper {
+        @apply flex-shrink-0 w-20;
+    }
+
+    .book-image {
+        @apply w-full h-auto object-cover rounded-sm shadow-sm;
+    }
+
+    .book-details {
+        @apply flex-1 flex flex-col gap-2;
+    }
+
+    .book-title {
+        @apply m-0 text-base font-semibold leading-[1.4] text-gray-900 break-words;
+    }
+
+    .book-author {
+        @apply m-0 text-sm text-gray-600 leading-[1.4];
+    }
+
+    .book-description {
+        @apply m-0 text-sm text-gray-700 leading-[1.4];
+    }
+
+    .update-progress-btn {
+        @apply self-start px-3 py-1.5 text-xs border border-gray-300 bg-white rounded cursor-pointer text-gray-900 transition-all duration-200;
+    }
+
+    .update-progress-btn:hover {
+        @apply bg-gray-50 border-gray-600;
+    }
+
+    .update-progress-btn:active {
+        @apply bg-gray-100;
+    }
+}
