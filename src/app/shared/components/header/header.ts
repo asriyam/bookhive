@@ -8,12 +8,15 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-header',
   imports: [NgIcon, FormsModule],
+  providers: [provideIcons({ heroUserCircle, heroBars3, heroMagnifyingGlass })],
   templateUrl: './header.html',
   styleUrl: './header.css',
 })
 export class Header {
   isMenuOpen = signal(false);
   searchQuery = signal('');
+  browseSubmenuOpen = signal(false);
+  communitySubmenuOpen = signal(false);
 
   constructor(private router: Router) { }
 
@@ -23,6 +26,14 @@ export class Header {
 
   closeMenu() {
     this.isMenuOpen.set(false);
+  }
+
+  toggleSubmenu(menu: 'browse' | 'community') {
+    if (menu === 'browse') {
+      this.browseSubmenuOpen.update(value => !value);
+    } else if (menu === 'community') {
+      this.communitySubmenuOpen.update(value => !value);
+    }
   }
 
   onSearch() {

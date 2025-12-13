@@ -15,12 +15,24 @@
                 <a class="cursor-pointer">
                     My Books
                 </a>
-                <a class="cursor-pointer">
-                    Browse
-                </a>
-                <a class="cursor-pointer">
-                    Community
-                </a>
+                <div class="relative group">
+                    <a class="cursor-pointer flex items-center gap-1">
+                        Browse
+                        <span class="text-xs">▼</span>
+                    </a>
+                    <div class="submenu">
+                        <a class="cursor-pointer">Explore</a>
+                    </div>
+                </div>
+                <div class="relative group">
+                    <a class="cursor-pointer flex items-center gap-1">
+                        Community
+                        <span class="text-xs">▼</span>
+                    </a>
+                    <div class="submenu">
+                        <a class="cursor-pointer">Groups</a>
+                    </div>
+                </div>
             </nav>
 
             <!-- Search and Profile Section -->
@@ -62,12 +74,28 @@
                 <a (click)="closeMenu()" class="cursor-pointer block">
                     My Books
                 </a>
-                <a (click)="closeMenu()" class="cursor-pointer block">
-                    Browse
-                </a>
-                <a (click)="closeMenu()" class="cursor-pointer block">
-                    Community
-                </a>
+                <div>
+                    <button (click)="toggleSubmenu('browse')" class="w-full text-left cursor-pointer flex items-center justify-between">
+                        <span>Browse</span>
+                        <span [class.rotate-180]="browseSubmenuOpen()">▼</span>
+                    </button>
+                    @if (browseSubmenuOpen()) {
+                    <a (click)="closeMenu()" class="cursor-pointer block pl-4">
+                        Explore
+                    </a>
+                    }
+                </div>
+                <div>
+                    <button (click)="toggleSubmenu('community')" class="w-full text-left cursor-pointer flex items-center justify-between">
+                        <span>Community</span>
+                        <span [class.rotate-180]="communitySubmenuOpen()">▼</span>
+                    </button>
+                    @if (communitySubmenuOpen()) {
+                    <a (click)="closeMenu()" class="cursor-pointer block pl-4">
+                        Groups
+                    </a>
+                    }
+                </div>
             </div>
         </nav>
         }
