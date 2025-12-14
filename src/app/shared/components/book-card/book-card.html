@@ -1,0 +1,15 @@
+<div class="book-item">
+    @if (showImage()) {
+    <div class="book-image-wrapper">
+        <img [src]="book().book_image" [alt]="book().title" class="book-image" />
+    </div>
+    }
+    <div class="book-details">
+        <h4 class="book-title">{{ book().title }}</h4>
+        <p class="book-author">by {{ book().author }}</p>
+        @if (showDescription()) {
+        <p class="book-description">{{ book().description }}</p>
+        }
+        <ng-content></ng-content>
+    </div>
+</div>

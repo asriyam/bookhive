@@ -4,9 +4,10 @@
             <!-- Logo Section -->
             <div class="shrink-0 flex items-center">
                 <img src="bookhive.png" alt="BookHive Logo"
-                    class="h-12 w-auto cursor-pointer hover:opacity-75 transition-opacity"
-                    (click)="navigateToHome()"
+                    class="h-12 w-auto cursor-pointer hover:opacity-75 transition-opacity" (click)="navigateToHome()"
                     title="BookHive - Home" />
+                <h1 class="px-1 text-2xl font-bold text-[--color-text-default] cursor-pointer hover:opacity-75 transition-opacity"
+                    (click)="navigateToHome()">WisLib</h1>
             </div>
 
             <!--Navigation Menu - Desktop -->
@@ -77,7 +78,8 @@
                     My Books
                 </a>
                 <div>
-                    <button (click)="toggleSubmenu('browse')" class="w-full text-left cursor-pointer flex items-center justify-between">
+                    <button (click)="toggleSubmenu('browse')"
+                        class="w-full text-left cursor-pointer flex items-center justify-between">
                         <span>Browse</span>
                         <span [class.rotate-180]="browseSubmenuOpen()">▼</span>
                     </button>
@@ -88,7 +90,8 @@
                     }
                 </div>
                 <div>
-                    <button (click)="toggleSubmenu('community')" class="w-full text-left cursor-pointer flex items-center justify-between">
+                    <button (click)="toggleSubmenu('community')"
+                        class="w-full text-left cursor-pointer flex items-center justify-between">
                         <span>Community</span>
                         <span [class.rotate-180]="communitySubmenuOpen()">▼</span>
                     </button>

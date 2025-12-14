@@ -1,0 +1,5 @@
+<div class="user-feed-container">
+    @for(update of userUpdates(); track update.updateid) {
+    <app-feed-item [update]="update" />
+    }
+</div>

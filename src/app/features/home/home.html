@@ -4,18 +4,20 @@
         <aside class="w-full md:w-1/4 p-4">
             <!-- Left column content goes here -->
             <h3 class="gr-h3">CURRENTLY READING</h3>
+            <app-book-shelf [books]="currentlyReadingShelfData" />
         </aside>
 
         <!-- Central Column -->
         <section class="flex-1 w-1/2 p-4">
             <!-- Main content goes here -->
-            MAIN CONTENT
+            <app-user-feed [updates]="userUpdates" />
         </section>
 
         <!-- Right Column -->
         <aside class="w-full md:w-1/4 p-4">
             <!-- Right column content goes here -->
             <h3 class="gr-h3">RECOMMENDATIONS</h3>
+            <app-book-shelf [books]="recommendedBooks" />
         </aside>
     </div>
 </main>

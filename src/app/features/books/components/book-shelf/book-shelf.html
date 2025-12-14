@@ -1,0 +1,7 @@
+<div class="shelf-container">
+    @for (book of books(); track book.id) {
+    <app-book-card [book]="book" [showImage]="true">
+        <button class="update-progress-btn">Update progress</button>
+    </app-book-card>
+    }
+</div>

@@ -1,0 +1,35 @@
+<div class="update-item-container">
+    <!-- User Avatar and Review Header Section -->
+    <div class="review-header">
+        <div class="user-avatar-section">
+            <img [src]="update().user.avatar_url" [alt]="update().user.username" class="user-avatar" />
+        </div>
+        <div class="reviewer-info">
+            <div class="reviewer-header">
+                <div class="reviewer-name">{{ update().user.username }} reviewed {{ update().book.title }}</div>
+                <div class="review-timestamp">{{ update().timestamp }}</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rating Section -->
+    <div class="rating-section">
+        <span class="rating-label">Rating</span>
+        <div class="rating-stars">
+            @for (star of [1, 2, 3, 4, 5]; track star) {
+            <span class="star" [class.filled]="star <= parseInt(update().rating)">★</span>
+            }
+        </div>
+    </div>
+
+    <!-- Review Content -->
+    <div class="review-content">
+        <p class="review-text">{{ update().update_content }}</p>
+        <a href="#" class="read-more-link">Read {{ update().book.author }}'s review</a>
+    </div>
+
+    <!-- Book Card with Book Details -->
+    <div class="book-details-section">
+        <app-book-card [book]="update().book" [showImage]="true" [showDescription]="true" />
+    </div>
+</div>

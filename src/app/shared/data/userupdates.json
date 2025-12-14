@@ -1,0 +1,77 @@
+[
+  {
+    "updateid": "183757866",
+    "updatetype": "Review",
+    "timestamp": "12/7/2025",
+    "rating": "5",
+    "update_content": "I was overjoyed to discover that this book I had liked when I was in high school was even more charming and lovely than I remembered.",
+    "book": {
+      "id": "9780385546898",
+      "title": "THE SECRET OF SECRETS",
+      "description": "As he searches for the missing noetic scientist he has been seeing, Robert Langdon discovers something regarding a secret project.",
+      "book_image": "https://static01.nyt.com/bestsellers/images/9780385546898.jpg",
+      "author": "Dan Brown",
+      "publisher": "Doubleday",
+      "list_name": "Combined Print \u0026 E-Book Fiction",
+      "list_name_encoded": "combined-print-and-e-book-fiction"
+    },
+    "user": {
+      "userid": "5813019",
+      "username": "ElizaLu",
+      "displayname": "ElizaLu",
+      "avatar_url": "https://images.gr-assets.com/users/1483760406p6/5813019.jpg",
+      "profile_url": "https://www.goodreads.com/user/show/5813019-elizalu",
+      "Location": "Chicago, IL"
+    }
+  },
+  {
+    "updateid": "957896866",
+    "updatetype": "Review",
+    "timestamp": "12/6/2025",
+    "rating": "4",
+    "update_content": "I started remembering why I gave up on reading these kinds of thrillers. I can't stop reading it, but God, its really so fucked up that I want to throw up.",
+    "book": {
+      "id": "9781250328175",
+      "title": "THE BLACK WOLF",
+      "description": "The 20th book in the Chief Inspector Gamache series. After thwarting a terrorist attack, an injured Gamache leads a covert investigation.",
+      "book_image": "https://static01.nyt.com/bestsellers/images/9781250328175.jpg",
+      "author": "Louise Penny",
+      "publisher": "Minotaur",
+      "list_name": "Combined Print \u0026 E-Book Fiction",
+      "list_name_encoded": "combined-print-and-e-book-fiction"
+    },
+    "user": {
+      "userid": "3906820",
+      "username": "Vidya",
+      "displayname": "Vidya-BooksAreMagic",
+      "avatar_url": "https://images.gr-assets.com/users/1390203697p6/3906820.jpg",
+      "profile_url": "https://www.goodreads.com/user/show/3906820-vidya-booksaremagic",
+      "Location": "Bengaluru, IN"
+    }
+  },
+  {
+    "updateid": "697879797",
+    "updatetype": "Review",
+    "timestamp": "12/7/2025",
+    "rating": "3",
+    "update_content": "An NPR Best Book of 2023 “full of cinematic and wild suspense” that “would be great for fans of Andy Weir”",
+    "book": {
+      "id": "9781464260919",
+      "title": "THE INTRUDER",
+      "description": "During a rough storm, Casey puts herself in danger when she lets a girl, who is covered in blood, into her cabin.",
+      "book_image": "https://static01.nyt.com/bestsellers/images/9781464260919.jpg",
+      "author": "Freida McFadden",
+      "publisher": "Poisoned Pen",
+      "list_name": "Combined Print \u0026 E-Book Fiction",
+      "list_name_encoded": "combined-print-and-e-book-fiction"
+    },
+    "user": {
+      "userid": "279256",
+      "username": "Diane",
+      "displayname": "Diane",
+      "avatar_url": "https://images.gr-assets.com/users/1497365060p6/279256.jpg",
+      "profile_url": "https://www.goodreads.com/user/show/279256-diane",
+      "Location": "New York, NY"
+    }
+  }
+]
