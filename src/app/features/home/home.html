@@ -2,22 +2,19 @@
     <div class="max-w-7xl w-full flex gap-4">
         <!-- Left Column -->
         <aside class="w-full md:w-1/4 p-4">
-            <!-- Left column content goes here -->
             <h3 class="gr-h3">CURRENTLY READING</h3>
-            <app-book-shelf [books]="currentlyReadingShelfData" />
+            <app-book-shelf [shelfType]="'currentlyReading'" />
         </aside>
 
         <!-- Central Column -->
         <section class="flex-1 w-1/2 p-4">
-            <!-- Main content goes here -->
-            <app-user-feed [updates]="userUpdates" />
+            <app-activity-feed />
         </section>
 
         <!-- Right Column -->
         <aside class="w-full md:w-1/4 p-4">
-            <!-- Right column content goes here -->
             <h3 class="gr-h3">RECOMMENDATIONS</h3>
-            <app-book-shelf [books]="recommendedBooks" />
+            <app-book-shelf [shelfType]="'recommendations'" />
         </aside>
     </div>
 </main>

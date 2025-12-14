@@ -1,30 +1,21 @@
-import { Component, signal, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { BookShelf } from '../books/components/book-shelf/book-shelf';
-import { UserFeed } from '../activity/components/user-feed/user-feed';
-
-
-import { Book } from '../../shared/models/book.model';
-import { UserUpdate } from '../../shared/models/userupdates.model';
-
-import bookListData from '../../shared/data/books-list.json';
-import userUpdateData from '../../shared/data/userupdates.json';
+import { ActivityFeed } from '../activity/components/activity-feed/activity-feed';
+import { BookFacade } from '../../core/services/book.facade';
+import { ActivityFacade } from '../../core/services/activity.facade';
 
 @Component({
   selector: 'app-home',
-  imports: [BookShelf, UserFeed],
+  imports: [BookShelf, ActivityFeed],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
 export class Home implements OnInit {
-  private originalBooks: Book[] = bookListData.library_catalog;
-  displayedBooks: Book[] = [];
-  currentlyReadingShelfData: Book[] = [];
-  recommendedBooks: Book[] = [];
-  userUpdates: UserUpdate[] = userUpdateData;
+  private bookFacade = inject(BookFacade);
+  private activityFacade = inject(ActivityFacade);
 
   ngOnInit(): void {
-    this.displayedBooks = [...this.originalBooks];
-    this.currentlyReadingShelfData = [this.displayedBooks[0], this.displayedBooks[1], this.displayedBooks[2]];
-    this.recommendedBooks = [this.displayedBooks[3], this.displayedBooks[4]];
+    this.bookFacade.loadBooks();
+    this.activityFacade.loadUserUpdates();
   }
 }
