@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { MainLayout } from './layout/main-layout/main-layout';
+import { ListLayout } from './layout/list-layout/list-layout';
 
 export const routes: Routes = [
     {
@@ -10,6 +11,17 @@ export const routes: Routes = [
                 path: '',
                 loadComponent: () => import('./features/home/home')
                     .then(m => m.Home),
+            }
+        ]
+    },
+    {
+        path: 'search',
+        component: ListLayout,
+        children: [
+            {
+                path: '',
+                loadComponent: () => import('./features/search/search')
+                    .then(m => m.Search)
             }
         ]
     }

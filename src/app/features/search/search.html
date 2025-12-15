@@ -1,0 +1,25 @@
+<div class="search-page-container">
+    <div class="search-header">
+        <h1>Search Results</h1>
+        <p class="search-query">Results for "<span class="font-semibold">{{ searchQuery() }}</span>"</p>
+    </div>
+
+    @if (isLoading()) {
+    <div class="loading-state">
+        <p>Searching...</p>
+    </div>
+    } @else if (searchResults().length === 0) {
+    <div class="no-results-state">
+        <p>No books found matching your search.</p>
+    </div>
+    } @else {
+    <div class="search-results">
+        <p class="results-count">Found {{ searchResults().length }} book(s)</p>
+        <div class="results-grid">
+            @for (book of searchResults(); track book.id) {
+            <app-book-card [book]="book" [showImage]="true" [showDescription]="true" />
+            }
+        </div>
+    </div>
+    }
+</div>
