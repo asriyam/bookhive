@@ -1,0 +1,16 @@
+<div class="shelf-list-container">
+  <h3 class="shelf-list-title">RELATED SHELVES</h3>
+  <ul class="shelf-list">
+    @for (shelf of shelves().slice(0, maxVisible()); track shelf.id) {
+      <li class="shelf-item">
+        <a [href]="'/shelf/' + shelf.slug" class="shelf-link">
+          {{ shelf.name }}
+        </a>
+        <span class="shelf-count">({{ formatCount(shelf.count) }})</span>
+      </li>
+    }
+  </ul>
+  @if (showMoreLink() && shelves().length > maxVisible()) {
+    <a href="/shelves" class="more-shelves-link">More shelves...</a>
+  }
+</div>

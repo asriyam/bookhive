@@ -1,25 +1,50 @@
-<div class="search-page-container">
-    <div class="search-header">
-        <h1>Search Results</h1>
-        <p class="search-query">Results for "<span class="font-semibold">{{ searchQuery() }}</span>"</p>
-    </div>
+<main class="w-full flex justify-center">
+    <div class="max-w-7xl w-full flex gap-4">
+        <section class="flex-1 w-2/3 p-4">
+            <!-- Header with Title and Sidebar -->
+            <div class="search-header-row">
+                <div class="search-header">
+                    <h1>Search</h1>
+                </div>
+            </div>
 
-    @if (isLoading()) {
-    <div class="loading-state">
-        <p>Searching...</p>
+            <!-- Search Box -->
+            <div class="search-box">
+                <input type="text" class="search-input" [value]="searchQuery()" readonly placeholder="Search books" />
+                <button class="search-btn" (click)="performSearch(searchQuery())">Search</button>
+            </div>
+
+            <!-- Results subtitle -->
+            <p class="search-query">Results for "<span class="font-semibold">{{ searchQuery() }}</span>"</p>
+
+            <!-- Search Content -->
+            <div class="search-content">
+                <!-- Left: Search Results -->
+                <div class="search-results-column">
+                    @if (isLoading()) {
+                    <div class="loading-state">
+                        <p>Searching...</p>
+                    </div>
+                    } @else if (searchResults().length === 0) {
+                    <div class="no-results-state">
+                        <p>No books found matching your search.</p>
+                    </div>
+                    } @else {
+                    <div class="search-results">
+                        <p class="results-count">Found {{ searchResults().length }} book(s)</p>
+                        <div class="results-grid">
+                            @for (book of searchResults(); track book.id) {
+                            <app-book-card [book]="book" [showImage]="true" [showDescription]="true" />
+                            }
+                        </div>
+                    </div>
+                    }
+                </div>
+            </div>
+        </section>
+        <!-- Right: Sidebar with Related Shelves -->
+        <aside class="w-1/3 p-4">
+            <app-shelf-list [shelves]="relatedShelves()" />
+        </aside>
     </div>
-    } @else if (searchResults().length === 0) {
-    <div class="no-results-state">
-        <p>No books found matching your search.</p>
-    </div>
-    } @else {
-    <div class="search-results">
-        <p class="results-count">Found {{ searchResults().length }} book(s)</p>
-        <div class="results-grid">
-            @for (book of searchResults(); track book.id) {
-            <app-book-card [book]="book" [showImage]="true" [showDescription]="true" />
-            }
-        </div>
-    </div>
-    }
-</div>
+</main>

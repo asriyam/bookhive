@@ -1,0 +1,58 @@
+.shelf-list-container {
+  border-radius: 4px;
+  padding: 1rem;
+}
+
+.shelf-list-title {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: #616161;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin: 0 0 1rem 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.shelf-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.shelf-item {
+  margin-bottom: 0.375rem;
+  font-size: 0.8125rem;
+  line-height: 1.4;
+}
+
+.shelf-link {
+  color: #0d7377;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.shelf-link:hover {
+  text-decoration: underline;
+  color: #0d7377;
+}
+
+.shelf-count {
+  color: #999;
+  font-size: 0.75rem;
+  margin-left: 0.25rem;
+}
+
+.more-shelves-link {
+  display: block;
+  text-align: right;
+  color: #0d7377;
+  font-size: 0.8125rem;
+  text-decoration: none;
+  margin-top: 0.75rem;
+  font-style: italic;
+}
+
+.more-shelves-link:hover {
+  text-decoration: underline;
+}

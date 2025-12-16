@@ -1,0 +1,81 @@
+{
+    "query": "stephen",
+    "searchType": "books",
+    "relatedShelves": [
+        {
+            "id": 1,
+            "name": "fantasy",
+            "slug": "fantasy",
+            "count": 19025085,
+            "isCurated": true
+        },
+        {
+            "id": 2,
+            "name": "fiction",
+            "slug": "fiction",
+            "count": 18382588,
+            "isCurated": true
+        },
+        {
+            "id": 3,
+            "name": "romance",
+            "slug": "romance",
+            "count": 13684190,
+            "isCurated": true
+        },
+        {
+            "id": 4,
+            "name": "young adult",
+            "slug": "young-adult",
+            "count": 6531774,
+            "isCurated": true
+        },
+        {
+            "id": 5,
+            "name": "mystery",
+            "slug": "mystery",
+            "count": 6381166,
+            "isCurated": true
+        },
+        {
+            "id": 6,
+            "name": "classics",
+            "slug": "classics",
+            "count": 5722671,
+            "isCurated": true
+        },
+        {
+            "id": 7,
+            "name": "audiobook",
+            "slug": "audiobook",
+            "count": 5092943,
+            "isCurated": false
+        },
+        {
+            "id": 8,
+            "name": "horror",
+            "slug": "horror",
+            "count": 3533412,
+            "isCurated": true
+        },
+        {
+            "id": 9,
+            "name": "thriller",
+            "slug": "thriller",
+            "count": 2742118,
+            "isCurated": true
+        },
+        {
+            "id": 10,
+            "name": "coming-of-age",
+            "slug": "coming-of-age",
+            "count": 341822,
+            "isCurated": false
+        }
+    ],
+    "meta": {
+        "generatedAt": "2025-01-10T10:15:00Z",
+        "source": "mock-data",
+        "maxShelvesReturned": 20
+    }
+}

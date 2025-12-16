@@ -1,13 +1,16 @@
-import { Book } from "../../shared/models/book.model";
-import bookListData from '../../shared/data/books-list.json';
 import { Injectable, signal } from "@angular/core";
 import { BookFacade } from "./book.facade";
+import { Shelf } from '../../shared/models/shelf.model';
+import { Book } from "../../shared/models/book.model";
+
+import searchShelvesData from '../../shared/data/search-shelves.json';
 
 @Injectable({
     providedIn: 'root'
 })
 export class SearchFacade {
     searchResults = signal<Book[]>([]);
+    relatedShelves = signal<Shelf[]>([]);
 
     constructor(private bookFacade: BookFacade) { }
 
@@ -24,6 +27,8 @@ export class SearchFacade {
         );
 
         this.searchResults.set(results);
+        this.relatedShelves.set(searchShelvesData.relatedShelves);
+
         return results;
     }
 }

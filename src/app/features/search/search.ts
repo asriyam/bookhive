@@ -3,12 +3,14 @@ import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { SearchFacade } from '../../core/services/search.facade';
 import { BookCard } from '../../shared/components/book-card/book-card';
+import { ShelfList } from '../../shared/components/shelf-list/shelf-list';
 import { Book } from '../../shared/models/book.model';
+import { Shelf } from '../../shared/models/shelf.model';
 
 @Component({
   selector: 'app-search',
   standalone: true,
-  imports: [CommonModule, BookCard],
+  imports: [CommonModule, BookCard, ShelfList],
   templateUrl: './search.html',
   styleUrl: './search.css',
 })
@@ -18,6 +20,7 @@ export class Search implements OnInit {
   searchQuery = signal('');
   searchResults = signal<Book[]>([]);
   isLoading = signal(false);
+  relatedShelves = signal<Shelf[]>([]);
 
   constructor(private route: ActivatedRoute) { }
 
@@ -32,6 +35,7 @@ export class Search implements OnInit {
   performSearch(query: string) {
     if (!query.trim()) {
       this.searchResults.set([]);
+      this.relatedShelves.set([]);
       return;
     }
 
@@ -39,8 +43,9 @@ export class Search implements OnInit {
 
     // Simulate API delay
     setTimeout(() => {
-      const results = this.searchFacade.performSearch(query);
-      this.searchResults.set(results);
+      this.searchFacade.performSearch(query);
+      this.searchResults.set(this.searchFacade.searchResults());
+      this.relatedShelves.set(this.searchFacade.relatedShelves());
       this.isLoading.set(false);
     }, 300);
   }
