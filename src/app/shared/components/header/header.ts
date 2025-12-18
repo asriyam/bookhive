@@ -53,4 +53,13 @@ export class Header {
   navigateToHome() {
     this.router.navigate(['/']);
   }
+
+  navigateToMyBooks() {
+    this.router.navigate(['/review'])
+  }
+
+  navigateToExplore() {
+    this.router.navigate(['/explore']);
+    this.closeMenu();
+  }
 }

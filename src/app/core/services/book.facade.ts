@@ -1,7 +1,9 @@
 import { Injectable, signal } from '@angular/core';
 import { Book } from '../../shared/models/book.model';
+import { UserBook, UserBooksData } from '../../shared/models/user-book.model';
 
 import bookListData from '../../shared/data/books-list.json';
+import userBooksData from '../../shared/data/user-books.json';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +12,7 @@ export class BookFacade {
   private allBooks = signal<Book[]>([]);
   currentlyReading = signal<Book[]>([]);
   recommendations = signal<Book[]>([]);
+  userBooks = signal<UserBook[]>([]);
 
   private originalBooks: Book[] = bookListData.library_catalog;
 
@@ -59,4 +62,15 @@ export class BookFacade {
    * Future: Get book by ID
    */
   // getBookById(id: string): Observable<Book> { ... }
+
+  /**
+   * Get books for a specific user
+   * @param userId - User identifier (currently unused as we have mock data for single user)
+   * @returns Array of user books with ratings, shelves, and dates
+   */
+  getBooksByUser(userId: string): UserBook[] {
+    const data = userBooksData as UserBooksData;
+    this.userBooks.set(data.books);
+    return data.books;
+  }
 }

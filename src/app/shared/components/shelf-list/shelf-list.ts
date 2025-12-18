@@ -9,6 +9,7 @@ import { Shelf } from '../../models/shelf.model';
   styleUrl: './shelf-list.css',
 })
 export class ShelfList {
+  title = input<string>('');
   shelves = input<Shelf[]>([]);
   maxVisible = input<number>(25);
   showMoreLink = input<boolean>(true);

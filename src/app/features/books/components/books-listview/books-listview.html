@@ -1,0 +1,62 @@
+<div class="books-listview-container">
+  @if (isLoading()) {
+    <div class="loading-state">
+      <p>Loading your books...</p>
+    </div>
+  } @else if (books().length === 0) {
+    <div class="empty-state">
+      <p>No books found in your library.</p>
+    </div>
+  } @else {
+    <table id="books" border="0">
+      <thead>
+        <tr>
+          <th alt="cover">cover</th>
+          <th alt="title">title</th>
+          <th alt="author">author</th>
+          <th alt="avg_rating">avg rating</th>
+          <th alt="userrating">rating</th>
+          <th alt="shelves">shelves</th>
+          <th alt="date_read">date read</th>
+          <th alt="date_added">date added</th>
+        </tr>
+      </thead>
+      <tbody id="booksBody">
+        @for (book of books(); track book.id) {
+          <tr id="review_{{book.id}}" style="cursor: auto;">
+            <td class="book-cover-cell">
+              <a [title]="book.title" href="/book/show/{{book.id}}">
+                <img [alt]="book.title" [id]="book.id" [src]="book.book_image" class="book-cover-img">
+              </a>
+            </td>
+            <td>
+              <a [title]="book.title" href="/book/show/{{book.id}}">
+                <span>{{ book.title }}</span>
+              </a>
+            </td>
+            <td>
+              <span>{{ book.author }}</span>
+            </td>
+            <td>
+              <span>{{ book.avgRating.toFixed(2) }}</span>
+            </td>
+            <td>
+              <span>{{ getRatingStars(book.userRating) }}</span>
+            </td>
+            <td>
+              @for (shelf of book.shelves; track shelf) {
+                <span class="shelf-badge">{{ shelf }}</span>
+              }
+            </td>
+            <td>
+              <span>{{ formatDate(book.dateRead) }}</span>
+            </td>
+            <td>
+              <span>{{ formatDate(book.dateAdded) }}</span>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  }
+</div>

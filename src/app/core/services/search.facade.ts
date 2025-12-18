@@ -12,7 +12,9 @@ export class SearchFacade {
     searchResults = signal<Book[]>([]);
     relatedShelves = signal<Shelf[]>([]);
 
-    constructor(private bookFacade: BookFacade) { }
+    constructor(private bookFacade: BookFacade) {
+        this.relatedShelves.set(searchShelvesData.relatedShelves);
+    }
 
 
 

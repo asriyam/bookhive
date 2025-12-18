@@ -1,0 +1,46 @@
+{
+    "featuredPost": {
+        "id": 501,
+        "title": "New Holiday-Themed Romances, Mysteries, and More",
+        "slug": "new-holiday-themed-romances-mysteries-and-more",
+        "excerpt": "There are countless ways to stack and sort your future reading queue. Some people like to plot out their list far in advance, while others prefer a more extemporaneous, mood-based approach.",
+        "imageUrl": "https://images.gr-assets.com/blogs/1761252075p8/2955.jpg",
+        "publishedAt": "2025-11-30",
+        "likes": 394,
+        "author": {
+            "name": "Goodreads Editors",
+            "avatarUrl": "https://images.example.com/authors/goodreads-editors.png"
+        },
+        "category": "Editorial"
+    },
+    "secondaryPosts": [
+        {
+            "id": 502,
+            "title": "Get Ready! Readers' Most Anticipated Books of 2026",
+            "slug": "readers-most-anticipated-books-2026",
+            "publishedAt": "2025-12-02",
+            "category": "Lists",
+            "url": "/blog/readers-most-anticipated-books-2026"
+        },
+        {
+            "id": 503,
+            "title": "Meet the Winners of the 2025 Goodreads Choice Awards!",
+            "slug": "goodreads-choice-awards-2025-winners",
+            "publishedAt": "2025-12-01",
+            "category": "Awards",
+            "url": "/blog/goodreads-choice-awards-2025-winners"
+        },
+        {
+            "id": 504,
+            "title": "18 New Cross-Genre Book Trends from 2025 (and Going Strong into 2026!)",
+            "slug": "cross-genre-book-trends-2025",
+            "publishedAt": "2025-11-28",
+            "category": "Trends",
+            "url": "/blog/cross-genre-book-trends-2025"
+        }
+    ],
+    "meta": {
+        "sectionTitle": "More news & interviews",
+        "totalPosts": 4
+    }
+}

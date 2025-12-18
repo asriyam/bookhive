@@ -1,16 +1,17 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { SearchFacade } from '../../core/services/search.facade';
-import { BookCard } from '../../shared/components/book-card/book-card';
-import { ShelfList } from '../../shared/components/shelf-list/shelf-list';
-import { Book } from '../../shared/models/book.model';
-import { Shelf } from '../../shared/models/shelf.model';
+import { SearchFacade } from '../../../../core/services/search.facade';
+import { BookCard } from '../../../../shared/components/book-card/book-card';
+import { ShelfList } from '../../../../shared/components/shelf-list/shelf-list';
+import { Footer } from '../../../../shared/components/footer/footer';
+import { Book } from '../../../../shared/models/book.model';
+import { Shelf } from '../../../../shared/models/shelf.model';
 
 @Component({
   selector: 'app-search',
   standalone: true,
-  imports: [CommonModule, BookCard, ShelfList],
+  imports: [CommonModule, BookCard, ShelfList, Footer],
   templateUrl: './search.html',
   styleUrl: './search.css',
 })

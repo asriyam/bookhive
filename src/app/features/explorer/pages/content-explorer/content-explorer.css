@@ -1,0 +1,12 @@
+.content-explorer-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content-explorer-main {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}

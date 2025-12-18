@@ -15,7 +15,7 @@
                 <a (click)="navigateToHome()" class="cursor-pointer">
                     Home
                 </a>
-                <a class="cursor-pointer">
+                <a (click)="navigateToMyBooks()" class="cursor-pointer">
                     My Books
                 </a>
                 <div class="relative group">
@@ -24,7 +24,7 @@
                         <span class="text-xs">▼</span>
                     </a>
                     <div class="submenu">
-                        <a class="cursor-pointer">Explore</a>
+                        <a (click)="navigateToExplore()" class="cursor-pointer">Explore</a>
                     </div>
                 </div>
                 <div class="relative group">
@@ -84,7 +84,7 @@
                         <span [class.rotate-180]="browseSubmenuOpen()">▼</span>
                     </button>
                     @if (browseSubmenuOpen()) {
-                    <a (click)="closeMenu()" class="cursor-pointer block pl-4">
+                    <a (click)="navigateToExplore()" class="cursor-pointer block pl-4">
                         Explore
                     </a>
                     }

@@ -1,8 +1,8 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { BookShelf } from '../books/components/book-shelf/book-shelf';
-import { ActivityFeed } from '../activity/components/activity-feed/activity-feed';
-import { BookFacade } from '../../core/services/book.facade';
-import { ActivityFacade } from '../../core/services/activity.facade';
+import { BookShelf } from '../../../books/components/book-shelf/book-shelf';
+import { ActivityFeed } from '../../../activity/components/activity-feed/activity-feed';
+import { BookFacade } from '../../../../core/services/book.facade';
+import { ActivityFacade } from '../../../../core/services/activity.facade';
 
 @Component({
   selector: 'app-home',

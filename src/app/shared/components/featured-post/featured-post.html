@@ -1,0 +1,14 @@
+<article class="featured-content-card">
+  <!-- Featured Image on Left -->
+  <div class="featured-image-wrapper">
+    <img [src]="post().imageUrl" [alt]="post().title" class="featured-image" />
+  </div>
+
+  <div class="featured-content-text">
+    <h2 class="featured-title">{{ post().title }}</h2>
+    <p class="featured-excerpt">{{ post().excerpt }}</p>
+    <div class="featured-footer">
+      <span class="likes">{{ post().likes }} likes</span>
+    </div>
+  </div>
+</article>

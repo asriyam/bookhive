@@ -1,0 +1,136 @@
+.books-listview-container {
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0,0,0,.05);
+  overflow: hidden;
+}
+
+.loading-state,
+.empty-state {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #999;
+  font-size: 1.125rem;
+  background: #fafafa;
+}
+
+#books {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .875rem;
+  table-layout: auto;
+}
+
+#books thead {
+  background-color: #f5f5f5;
+  border-bottom: 2px solid #d3d3d3;
+  position: sticky;
+  top: 0;
+}
+
+#books th {
+  padding: .875rem;
+  text-align: left;
+  font-weight: 600;
+  color: #382110;
+  white-space: nowrap;
+  font-size: .8125rem;
+}
+
+#books th:nth-child(1) { min-width: 70px; }
+#books th:nth-child(2) { min-width: 150px; }
+#books th:nth-child(3) { min-width: 120px; }
+#books th:nth-child(4) { min-width: 90px; }
+#books th:nth-child(5) { min-width: 90px; }
+#books th:nth-child(6) { min-width: 100px; }
+#books th:nth-child(7) { min-width: 100px; }
+#books th:nth-child(8) { min-width: 100px; }
+
+#books tbody tr {
+  border-bottom: 1px solid #e0e0e0;
+  transition: background-color .15s;
+}
+
+#books tbody tr:hover {
+  background-color: #fafafa;
+}
+
+#books td {
+  padding: .875rem;
+  vertical-align: middle;
+  color: #382110;
+}
+
+.book-cover-cell {
+  text-align: center;
+  padding: .5rem;
+  width: 70px;
+}
+
+.book-cover-img {
+  max-width: 50px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0,0,0,.1);
+  transition: box-shadow .15s;
+}
+
+.book-cover-img:hover {
+  box-shadow: 0 2px 6px rgba(0,0,0,.15);
+}
+
+#books a {
+  color: #0d7377;
+  text-decoration: none;
+  transition: color .15s;
+}
+
+#books a:hover {
+  color: #0a5a63;
+  text-decoration: underline;
+}
+
+.shelf-badge {
+  display: inline-block;
+  padding: .35rem .625rem;
+  background: #dbeafe;
+  color: #1e40af;
+  border-radius: 8px;
+  font-size: .75rem;
+  font-weight: 600;
+  margin-right: .25rem;
+  margin-bottom: .25rem;
+  border: 1px solid #bfdbfe;
+}
+
+@media (max-width: 1024px) {
+  #books {
+    font-size: .8125rem;
+  }
+
+  #books th,
+  #books td {
+    padding: .625rem;
+  }
+
+  .book-cover-img {
+    max-width: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  #books {
+    font-size: .75rem;
+  }
+
+  #books th,
+  #books td {
+    padding: .5rem;
+  }
+
+  .book-cover-img {
+    max-width: 35px;
+  }
+}

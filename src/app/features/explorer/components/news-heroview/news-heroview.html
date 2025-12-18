@@ -1,0 +1,22 @@
+<div class="news-container">
+  @if (featuredPost()) {
+    <div class="news-hero-layout">
+      <!-- Featured Post Component -->
+      <div class="featured-post-wrapper">
+        <app-featured-post [post]="featuredPost()!" />
+      </div>
+
+      <!-- Secondary Posts on Right -->
+      <div class="secondary-posts-wrapper">
+        @if (secondaryPosts().length > 0) {
+          @for (post of secondaryPosts(); track post.id) {
+            <article class="secondary-post">
+              <h3 class="post-title">{{ post.title }}</h3>
+              <a [href]="post.url" class="read-more">More news & interviews →</a>
+            </article>
+          }
+        }
+      </div>
+    </div>
+  }
+</div>

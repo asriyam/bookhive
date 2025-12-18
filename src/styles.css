@@ -12,8 +12,16 @@
     --color-text-hover: #f2f2f2;
 }
 
-body {
-    background-color: var(--color-cream);
+/* CSS Variables for use with var() in component stylesheets */
+:root {
+    --color-cream: #F9F8F5;
+    --color-masthead-bg: #FAF8F6;
+    --color-masthead-hover: #32362D;
+    --color-text-default: #382110;
+    --color-text-hover: #f2f2f2;
+}
+
+body {    
     font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
 }
 
