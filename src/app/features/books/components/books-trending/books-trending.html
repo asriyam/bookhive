@@ -1,0 +1,11 @@
+<section class="trending-section">
+  <div class="trending-header">
+    <p>Trending books</p>
+  </div>
+
+  <app-carousel [books]="trendingBooks()" *ngIf="trendingBooks().length > 0"></app-carousel>
+
+  <div *ngIf="trendingBooks().length === 0" class="empty-state">
+    <p>No trending books available</p>
+  </div>
+</section>

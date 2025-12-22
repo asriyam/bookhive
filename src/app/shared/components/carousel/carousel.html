@@ -1,0 +1,40 @@
+<div class="carousel-container">
+  <div class="carousel-wrapper">
+    <!-- Carousel Track -->
+    <div class="carousel-track" [style.transform]="'translateX(' + getCarouselOffset() + ')'">
+      @for (book of books(); track book.id) {
+        <div class="carousel-item">
+          <img [src]="book.book_image" [alt]="book.title" class="book-image" loading="lazy" />
+          <span>{{book.title}}</span>
+          <span>{{book.author}}</span>
+        </div>
+      }
+    </div>
+
+    <!-- Previous Button -->
+    @if (isPreviousVisible()) {
+      <button class="carousel-button prev-button" (click)="previousSlide()" aria-label="Previous slide">
+        <svg class="button-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+    }
+
+    <!-- Next Button -->
+    @if (isNextVisible()) {
+      <button class="carousel-button next-button" (click)="nextSlide()" aria-label="Next slide">
+        <svg class="button-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </button>
+    }
+  </div>
+
+  <!-- Carousel Indicators -->
+  <div class="carousel-indicators">
+    @for (book of books(); let i = $index; track book.id) {
+      <button class="indicator" [class.active]="i === currentIndex()"
+        (click)="currentIndex.set(i)" [attr.aria-label]="'Go to slide ' + (i + 1)"></button>
+    }
+  </div>
+</div>

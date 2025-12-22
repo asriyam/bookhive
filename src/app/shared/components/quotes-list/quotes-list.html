@@ -1,0 +1,32 @@
+<div class="quotes-list">
+  @if (quotes().length === 0) {
+    <p class="empty-state">No quotes found</p>
+  } @else {
+    @for (quote of quotes(); track quote.id) {
+      <article class="quote-card">
+        <div class="quote-content">
+          <div class="author-info">
+            <img [src]="quote.author.avatarUrl" [alt]="quote.author.name" class="author-avatar" />
+            <div class="author-details">
+              <blockquote class="quote-text">"{{ quote.text }}"</blockquote>
+              <p class="author-name">— {{ quote.author.name }}</p>
+            </div>
+          </div>
+
+          <div class="quote-footer">
+            <div class="tags">
+              @for (tag of quote.tags; track tag) {
+                <span class="tag">{{ tag }}</span>
+              }
+            </div>
+            <button class="like-button" [attr.aria-label]="'Like quote, ' + quote.likes + ' likes'">
+              Like
+            </button>
+          </div>
+        </div>
+
+        <div class="likes-count">{{ quote.likes | number }} likes</div>
+      </article>
+    }
+  }
+</div>

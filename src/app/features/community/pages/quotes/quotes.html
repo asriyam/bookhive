@@ -1,0 +1,23 @@
+<div class="quotes-page">
+  <div class="quotes-header">
+    <h1 class="page-title">Popular quotes</h1>
+
+    <div class="search-container">
+      <input
+        type="text"
+        class="search-input"
+        placeholder="Find quotes by keyword, author"
+        aria-label="Search quotes"
+      />
+      <button class="search-button">Search</button>
+    </div>
+  </div>
+
+  <div class="tabs-container">
+    <button class="tab active">Popular</button>
+    <button class="tab">Friends</button>
+    <button class="tab">Authors</button>
+  </div>
+
+  <app-quotes-list [quotes]="quotesData()"></app-quotes-list>
+</div>

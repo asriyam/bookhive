@@ -73,4 +73,12 @@ export class BookFacade {
     this.userBooks.set(data.books);
     return data.books;
   }
+
+  /**
+   * Get trending books (first 10 books from catalog)
+   * @returns Array of 10 trending books
+   */
+  getTrendingBooks(): Book[] {
+    return this.originalBooks.slice(0, 10);
+  }
 }

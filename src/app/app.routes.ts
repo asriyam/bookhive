@@ -46,5 +46,16 @@ export const routes: Routes = [
                     .then(m => m.ContentExplorer)
             }
         ]
+    },
+    {
+        path: 'quotes',
+        component: ListLayout,
+        children: [
+            {
+                path: '',
+                loadComponent: () => import('./features/community/pages/quotes/quotes')
+                    .then(m => m.Quotes)
+            }
+        ]
     }
 ];

@@ -62,4 +62,9 @@ export class Header {
     this.router.navigate(['/explore']);
     this.closeMenu();
   }
+
+  navigateToQuotes() {
+    this.router.navigate(['/quotes']);
+    this.closeMenu();
+  }
 }

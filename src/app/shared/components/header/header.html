@@ -33,7 +33,7 @@
                         <span class="text-xs">▼</span>
                     </a>
                     <div class="submenu">
-                        <a class="cursor-pointer">Groups</a>
+                        <a (click)="navigateToQuotes()" class="cursor-pointer">Quotes</a>
                     </div>
                 </div>
             </nav>
@@ -97,7 +97,7 @@
                     </button>
                     @if (communitySubmenuOpen()) {
                     <a (click)="closeMenu()" class="cursor-pointer block pl-4">
-                        Groups
+                        Quotes
                     </a>
                     }
                 </div>
