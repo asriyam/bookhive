@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="BookHive.Api/BookHive.Api.csproj" />
+  <Project Path="BookHive.Core/BookHive.Core.csproj" />
+  <Project Path="BookHive.Infrastructure/BookHive.Infrastructure.csproj" />
+</Solution>
