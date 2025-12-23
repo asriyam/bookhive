@@ -1,14 +1,14 @@
 ﻿using BookHive.Core.DTOs;
-using BookHive.Infrastructure.Providers;
+using BookHive.Core.Providers;
 
 namespace BookHive.Api.Services;
 
-public sealed class BooksService(BooksMockProvider _provider)
+public sealed class BooksService(IBookProvider _provider)
 {
-    public IEnumerable<BookDto> GetBooks()
+    public IEnumerable<BookDto>? GetBooks()
     {
         var books = _provider.GetAllBooks();
-        var bookDtos = books.Select(MapToDto);
+        var bookDtos = books?.Select(MapToDto);
         return bookDtos;
     }
 
@@ -18,10 +18,10 @@ public sealed class BooksService(BooksMockProvider _provider)
         return MapToDto(book);
     }
 
-    public IEnumerable<BookDto> SearchBooks(string query)
+    public IEnumerable<BookDto>? SearchBooks(string query)
     {
         var results = _provider.SearchBooks(query);
-        var bookDtos = results.Select(MapToDto);
+        var bookDtos = results?.Select(MapToDto);
         return bookDtos;
     }
 

@@ -10,7 +10,7 @@ namespace BookHive.Api.Controllers;
 /// </summary>
 [ApiController]
 [Route("api/v1/[controller]")]
-public class BooksController(BooksService mockDataService) : ControllerBase
+public class BooksController(BooksService booksService) : ControllerBase
 {
     /// <summary>
     /// Gets all books from the catalog.
@@ -21,7 +21,7 @@ public class BooksController(BooksService mockDataService) : ControllerBase
     [Produces("application/json")]
     public ActionResult<IEnumerable<BookDto>> GetBooks()
     {
-        var books = mockDataService.GetBooks();
+        var books = booksService.GetBooks();
         return Ok(books);
     }
 
@@ -36,7 +36,7 @@ public class BooksController(BooksService mockDataService) : ControllerBase
     [Produces("application/json")]
     public ActionResult<BookDto> GetBookById(string id)
     {
-        var book = mockDataService.GetBookById(id);
+        var book = booksService.GetBookById(id);
         if (book is null)
             return NotFound(new { message = $"Book with ID '{id}' not found." });
 
@@ -50,14 +50,14 @@ public class BooksController(BooksService mockDataService) : ControllerBase
     /// <param name="query">The search query string.</param>
     /// <returns>List of books matching the search query.</returns>
     /// <response code="200">Returns the matching books.</response>
-    [HttpGet("search")]
+    [HttpGet("search/{query}")]
     [Produces("application/json")]
-    public ActionResult<IEnumerable<BookDto>> SearchBooks([FromQuery] string? query)
+    public ActionResult<IEnumerable<BookDto>> SearchBooks(string? query)
     {
         if (string.IsNullOrWhiteSpace(query))
             return Ok(Enumerable.Empty<BookDto>());
 
-        var results = mockDataService.SearchBooks(query);
+        var results = booksService.SearchBooks(query);
         return Ok(results);
     }    
 }

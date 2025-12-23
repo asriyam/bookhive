@@ -1,9 +1,9 @@
 ﻿
 using BookHive.Core.DTOs;
-using BookHive.Infrastructure.Providers;
+using BookHive.Core.Providers;
 namespace BookHive.Api.Services;
 
-public sealed class UsersService(UsersMockProvider _provider)
+public sealed class UsersService(IUserProvider _provider)
 {
     public UserDto GetUserById(string userId)
     {
@@ -15,7 +15,7 @@ public sealed class UsersService(UsersMockProvider _provider)
     public IEnumerable<UserDto> GetAllUsers()
     {
         var users = _provider.GetAllUsers();
-        var userDtos = users.Select(MapToDto);
+        var userDtos = users.Select(MapToUserDto);
         return userDtos;
     }
 
@@ -32,19 +32,6 @@ public sealed class UsersService(UsersMockProvider _provider)
     /// <param name="user"></param>
     /// <returns></returns>
     private static UserDto MapToUserDto(BookHive.Core.Entities.User user) => new()
-    {
-        Id = user.Id,
-        Username = user.Username,
-        DisplayName = user.DisplayName,
-        AvatarUrl = user.AvatarUrl,
-        ProfileUrl = user.ProfileUrl,
-        Location = user.Location
-    };
-
-    /// <summary>
-    /// Maps a User entity to a UserDto.
-    /// </summary>
-    private static UserDto MapToDto(BookHive.Core.Entities.User user) => new()
     {
         Id = user.Id,
         Username = user.Username,

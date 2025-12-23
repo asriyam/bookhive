@@ -1,11 +1,12 @@
 ﻿using BookHive.Core.Entities;
+using BookHive.Core.Providers;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace BookHive.Infrastructure.Providers;
 
-public sealed class ShelvesMockProvider
+public sealed class ShelvesMockProvider : IShelfProvider
 {
     private readonly List<Shelf> _shelves;
 
@@ -17,12 +18,12 @@ public sealed class ShelvesMockProvider
     /// <summary>
     /// Gets all shelves from mock data.
     /// </summary>
-    public IEnumerable<Shelf> GetAllShelves() => _shelves;
+    public IEnumerable<Shelf>? GetAllShelves() => _shelves;
 
     /// <summary>
     /// Gets shelves for a specific user (returns all shelves for Phase 2).
     /// </summary>
-    public IEnumerable<Shelf> GetUserShelves(string userId) => _shelves;
+    public IEnumerable<Shelf>? GetUserShelves(string userId) => _shelves;
 
 
 

@@ -1,5 +1,5 @@
-﻿using BookHive.Infrastructure.Providers;
-using BookHive.Api.Controllers;
+﻿using BookHive.Core.Providers;
+using BookHive.Infrastructure.Providers;
 using BookHive.Api.Services;
 
 namespace BookHive.Api.DependencyInjection
@@ -8,10 +8,12 @@ namespace BookHive.Api.DependencyInjection
     {
         public static IServiceCollection AddBookHive(this IServiceCollection services)
         {
-            services.AddSingleton<BooksMockProvider>();
-            services.AddSingleton<ShelvesMockProvider>();
-            services.AddSingleton<UsersMockProvider>();
+            // Register provider interfaces with their mock implementations
+            services.AddSingleton<IBookProvider, BooksMockProvider>();
+            services.AddSingleton<IShelfProvider, ShelvesMockProvider>();
+            services.AddSingleton<IUserProvider, UsersMockProvider>();
 
+            // Register business logic services (scoped per HTTP request)
             services.AddScoped<BooksService>();
             services.AddScoped<ShelvesService>();
             services.AddScoped<UsersService>();

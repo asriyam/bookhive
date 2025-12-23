@@ -1,41 +1,50 @@
 ﻿using BookHive.Core.Entities;
+using BookHive.Core.Providers;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.Json;
+using System.Text.Json.Nodes;
+using System.Text.Json.Serialization;
 
 namespace BookHive.Infrastructure.Providers;
 
-public sealed class BooksMockProvider
+public sealed class BooksMockProvider : IBookProvider
 {
-    private readonly List<Book> _books;
+    private readonly List<Book>? _books;
+    public record LibraryResponse(
+    [property: JsonPropertyName("library_catalog")] List<Book> Books
+    );
 
     public BooksMockProvider()
     {
-        _books = InitializeBooks();
+       // _books = InitializeBooks();
+         var json = File.ReadAllText("C:\\Work\\angular\\bookhive\\src\\api\\BookHive.Infrastructure\\Data\\books-list.json");
+        _books = JsonSerializer.Deserialize<LibraryResponse>(json)?.Books;
     }
 
     /// <summary>
     /// Gets all books from mock data.
     /// </summary>
-    public IEnumerable<Book> GetAllBooks() => _books;
+    public IEnumerable<Book>? GetAllBooks() => _books;
 
 
     /// <summary>
     /// Gets a book by ID.
     /// </summary>
-    public Book? GetBookById(string id) => _books.FirstOrDefault(b => b.Id == id);
+    public Book? GetBookById(string id) => _books?.FirstOrDefault(b => b.Id == id);
 
 
     /// <summary>
     /// Searches books by title, author, or description.
     /// </summary>
-    public IEnumerable<Book> SearchBooks(string query)
+    public IEnumerable<Book>? SearchBooks(string query)
     {
         if (string.IsNullOrWhiteSpace(query))
             return _books;
 
         var lowerQuery = query.ToLower();
-        return _books.Where(b =>
+        return _books?.Where(b =>
             b.Title.Contains(lowerQuery, StringComparison.OrdinalIgnoreCase) ||
             b.Author.Contains(lowerQuery, StringComparison.OrdinalIgnoreCase) ||
             b.Description.Contains(lowerQuery, StringComparison.OrdinalIgnoreCase)

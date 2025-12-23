@@ -1,11 +1,12 @@
 ﻿using BookHive.Core.Entities;
+using BookHive.Core.Providers;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace BookHive.Infrastructure.Providers;
 
-public sealed class UsersMockProvider
+public sealed class UsersMockProvider : IUserProvider
 {
 
     private readonly List<Activity> _activities;

@@ -1,10 +1,10 @@
 ﻿using BookHive.Core.DTOs;
-using BookHive.Infrastructure.Providers;
+using BookHive.Core.Providers;
 
 
 namespace BookHive.Api.Services;
 
-public sealed class ShelvesService(ShelvesMockProvider _provider)
+public sealed class ShelvesService(IShelfProvider _provider)
 {
     public IEnumerable<ShelfDto> GetAllShelves()
     {
