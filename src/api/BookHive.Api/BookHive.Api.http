@@ -1,6 +1,33 @@
 @BookHive.Api_HostAddress = http://localhost:5076
 
-GET {{BookHive.Api_HostAddress}}/weatherforecast/
+### Get all books
+GET {{BookHive.Api_HostAddress}}/api/books
 Accept: application/json
 
-###
+### Get book by ID
+GET {{BookHive.Api_HostAddress}}/api/books/978-0-06-112008-4
+Accept: application/json
+
+### Search books
+GET {{BookHive.Api_HostAddress}}/api/books/search?query=fantasy
+Accept: application/json
+
+### Get all users
+GET {{BookHive.Api_HostAddress}}/api/users
+Accept: application/json
+
+### Get user by ID
+GET {{BookHive.Api_HostAddress}}/api/users/user-1
+Accept: application/json
+
+### Get user activities
+GET {{BookHive.Api_HostAddress}}/api/users/user-1/activities
+Accept: application/json
+
+### Get all shelves
+GET {{BookHive.Api_HostAddress}}/api/shelves
+Accept: application/json
+
+### Get user shelves
+GET {{BookHive.Api_HostAddress}}/api/shelves/user/user-1
+Accept: application/json

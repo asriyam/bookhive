@@ -1,0 +1,141 @@
+{
+    "shelf": "all",
+    "books": [
+        {
+            "id": "9780385548984",
+            "book_image": "https://static01.nyt.com/bestsellers/images/9780385548984.jpg",
+            "title": "THE WIDOW",
+            "author": "John Grisham",
+            "avgRating": 3.97,
+            "userRating": 5,
+            "shelves": [
+                "read"
+            ],
+            "dateRead": null,
+            "dateAdded": "2025-02-16"
+        },
+        {
+            "id": "9780385546898",
+            "book_image": "https://static01.nyt.com/bestsellers/images/9780385546898.jpg",
+            "title": "THE SECRET OF SECRETS",
+            "author": "Dan Brown",
+            "avgRating": 3.95,
+            "userRating": 5,
+            "shelves": [
+                "read",
+                "romance"
+            ],
+            "dateRead": "2025-01-24",
+            "dateAdded": "2025-01-24"
+        },
+        {
+            "id": "9781464257872",
+            "title": "MURDER AT HOLLY HOUSE",
+            "book_image": "https://static01.nyt.com/bestsellers/images/9781464257872.jpg",
+            "author": "Denzil Meyrick",
+            "avgRating": 0.0,
+            "userRating": 0,
+            "shelves": [
+                "to-read"
+            ],
+            "dateRead": null,
+            "dateAdded": "2025-01-13"
+        },
+        {
+            "id": "9781538774700",
+            "title": "GONE BEFORE GOODBYE",
+            "book_image": "https://static01.nyt.com/bestsellers/images/9781538774700.jpg",
+            "author": "Reese Witherspoon and Harlan Coben",
+            "avgRating": 3.80,
+            "userRating": 0,
+            "shelves": [
+                "currently-reading"
+            ],
+            "dateRead": null,
+            "dateAdded": "2025-01-13"
+        },
+        {
+            "id": "9780316563826",
+            "title": "THE PROVING GROUND",
+            "book_image": "https://static01.nyt.com/bestsellers/images/9780316563826.jpg",
+            "author": "Michael Connelly",
+            "avgRating": 4.05,
+            "userRating": 0,
+            "shelves": [
+                "currently-reading"
+            ],
+            "dateRead": null,
+            "dateAdded": "2024-11-29"
+        },
+        {
+            "id": "9780593972700",
+            "title": "ALCHEMISED",
+            "book_image": "https://static01.nyt.com/bestsellers/images/9780593972700.jpg",
+            "author": "SenLinYu",
+            "avgRating": 4.05,
+            "userRating": 0,
+            "shelves": [
+                "read"
+            ],
+            "dateRead": null,
+            "dateAdded": "2024-11-29"
+        },
+        {
+            "id": "9798217154043",
+            "title": "REMAIN",
+            "book_image": "https://static01.nyt.com/bestsellers/images/9798217154043.jpg",
+            "author": "Nicholas Sparks with M. Night Shyamalan",
+            "avgRating": 4.05,
+            "userRating": 5,
+            "shelves": [
+                "read"
+            ],
+            "dateRead": "2025-01-13",
+            "dateAdded": "2024-11-26"
+        },
+        {
+            "id": "9781250328175",
+            "title": "THE BLACK WOLF",
+            "book_image": "https://static01.nyt.com/bestsellers/images/9781250328175.jpg",
+            "author": "Louise Penny",
+            "avgRating": 4.05,
+            "userRating": 5,
+            "shelves": [
+                "read"
+            ],
+            "dateRead": "2025-01-13",
+            "dateAdded": "2024-11-26"
+        },
+        {
+            "id": "9780593418925",
+            "title": "THE GOD OF THE WOODS",
+            "book_image": "https://static01.nyt.com/bestsellers/images/9780593418925.jpg",
+            "author": "Liz Moore",
+            "avgRating": 4.05,
+            "userRating": 5,
+            "shelves": [
+                "read"
+            ],
+            "dateRead": "2025-01-13",
+            "dateAdded": "2024-11-26"
+        },
+        {
+            "id": "9781538742570",
+            "title": "THE HOUSEMAID",
+            "book_image": "https://static01.nyt.com/bestsellers/images/9781538742570.jpg",
+            "author": "Freida McFadden",
+            "avgRating": 4.05,
+            "userRating": 5,
+            "shelves": [
+                "read"
+            ],
+            "dateRead": "2025-01-13",
+            "dateAdded": "2024-11-26"
+        }
+    ],
+    "meta": {
+        "sortBy": "date_added",
+        "sortOrder": "desc",
+        "totalBooks": 7
+    }
+}

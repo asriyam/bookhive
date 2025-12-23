@@ -1,5 +1,5 @@
+using BookHive.Api.Services;
 using BookHive.Core.DTOs;
-using BookHive.Infrastructure.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BookHive.Api.Controllers;
@@ -9,8 +9,8 @@ namespace BookHive.Api.Controllers;
 /// Provides endpoints for retrieving books, searching, and accessing book details.
 /// </summary>
 [ApiController]
-[Route("api/[controller]")]
-public class BooksController(MockDataService mockDataService) : ControllerBase
+[Route("api/v1/[controller]")]
+public class BooksController(BooksService mockDataService) : ControllerBase
 {
     /// <summary>
     /// Gets all books from the catalog.
@@ -21,9 +21,8 @@ public class BooksController(MockDataService mockDataService) : ControllerBase
     [Produces("application/json")]
     public ActionResult<IEnumerable<BookDto>> GetBooks()
     {
-        var books = mockDataService.GetAllBooks();
-        var bookDtos = books.Select(MapToDto);
-        return Ok(bookDtos);
+        var books = mockDataService.GetBooks();
+        return Ok(books);
     }
 
     /// <summary>
@@ -41,7 +40,7 @@ public class BooksController(MockDataService mockDataService) : ControllerBase
         if (book is null)
             return NotFound(new { message = $"Book with ID '{id}' not found." });
 
-        return Ok(MapToDto(book));
+        return Ok(book);
     }
 
     /// <summary>
@@ -59,22 +58,6 @@ public class BooksController(MockDataService mockDataService) : ControllerBase
             return Ok(Enumerable.Empty<BookDto>());
 
         var results = mockDataService.SearchBooks(query);
-        var bookDtos = results.Select(MapToDto);
-        return Ok(bookDtos);
-    }
-
-    /// <summary>
-    /// Maps a Book entity to a BookDto.
-    /// </summary>
-    private static BookDto MapToDto(BookHive.Core.Entities.Book book) => new()
-    {
-        Id = book.Id,
-        Title = book.Title,
-        Description = book.Description,
-        BookImageUrl = book.BookImageUrl,
-        Author = book.Author,
-        Publisher = book.Publisher,
-        ListName = book.ListName,
-        ListNameEncoded = book.ListNameEncoded
-    };
+        return Ok(results);
+    }    
 }

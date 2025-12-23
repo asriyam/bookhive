@@ -1,12 +1,12 @@
-using BookHive.Infrastructure.Services;
+using BookHive.Api.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllers();
 
-// Register mock data service for Phase 2 development
-builder.Services.AddSingleton<MockDataService>();
+// Register data service for Phase 2 development
+builder.Services.AddBookHive();
 
 // Swagger 
 builder.Services.AddEndpointsApiExplorer(); // Required for discovering endpoints

@@ -1,0 +1,89 @@
+{
+    "quotes": [
+        {
+            "id": 1001,
+            "text": "Be yourself; everyone else is already taken.",
+            "author": {
+                "id": 201,
+                "name": "Oscar Wilde",
+                "avatarUrl": "https://images.gr-assets.com/authors/1673611182p5/3565.jpg"
+            },
+            "tags": [
+                "attributed-no-source",
+                "be-yourself",
+                "gilbert-perreira",
+                "honesty",
+                "inspirational",
+                "misattributed-oscar-wilde",
+                "quote-investigator"
+            ],
+            "likes": 176931,
+            "createdAt": "2010-03-14"
+        },
+        {
+            "id": 1002,
+            "text": "I'm selfish, impatient and a little insecure. I make mistakes, I am out of control and at times hard to handle. But if you can't handle me at my worst, then you sure as hell don't deserve me at my best.",
+            "author": {
+                "id": 202,
+                "name": "Marilyn Monroe",
+                "avatarUrl": "https://images.gr-assets.com/quotes/1511992603p8/8630.jpg"
+            },
+            "tags": [
+                "attributed-no-source",
+                "best",
+                "life",
+                "love",
+                "misattributed-marilyn-monroe",
+                "mistakes",
+                "out-of-control",
+                "truth",
+                "worst"
+            ],
+            "likes": 165185,
+            "createdAt": "2010-03-15"
+        },
+        {
+            "id": 1003,
+            "text": "So many books, so little time.",
+            "author": {
+                "id": 203,
+                "name": "Frank Zappa",
+                "avatarUrl": "https://images.gr-assets.com/authors/1696236573p5/22302.jpg"
+            },
+            "tags": [
+                "books",
+                "humor"
+            ],
+            "likes": 151289,
+            "createdAt": "2010-03-16"
+        },
+        {
+            "id": 1004,
+            "text": "Two things are infinite: the universe and human stupidity; and I'm not sure about the universe.",
+            "author": {
+                "id": 204,
+                "name": "Albert Einstein",
+                "avatarUrl": "https://images.gr-assets.com/authors/1429114964p5/9810.jpg"
+            },
+            "tags": [
+                "attributed-no-source",
+                "human-nature",
+                "humor",
+                "infinity",
+                "philosophy",
+                "science",
+                "stupidity",
+                "universe"
+            ],
+            "likes": 148345,
+            "createdAt": "2010-03-17"
+        }
+    ],
+    "meta": {
+        "page": 1,
+        "pageSize": 4,
+        "totalQuotes": 500000,
+        "sortBy": "likes",
+        "sortOrder": "desc"
+    }
+}

@@ -1,5 +1,5 @@
+using BookHive.Api.Services;
 using BookHive.Core.DTOs;
-using BookHive.Infrastructure.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BookHive.Api.Controllers;
@@ -9,8 +9,8 @@ namespace BookHive.Api.Controllers;
 /// Provides endpoints for retrieving user information and user-specific data.
 /// </summary>
 [ApiController]
-[Route("api/[controller]")]
-public class UsersController(MockDataService mockDataService) : ControllerBase
+[Route("api/v1/[controller]")]
+public class UsersController(UsersService mockDataService) : ControllerBase
 {
     /// <summary>
     /// Gets a specific user by ID.
@@ -27,7 +27,7 @@ public class UsersController(MockDataService mockDataService) : ControllerBase
         if (user is null)
             return NotFound(new { message = $"User with ID '{id}' not found." });
 
-        return Ok(MapToDto(user));
+        return Ok(user);
     }
 
     /// <summary>
@@ -39,8 +39,7 @@ public class UsersController(MockDataService mockDataService) : ControllerBase
     [Produces("application/json")]
     public ActionResult<IEnumerable<UserDto>> GetAllUsers()
     {
-        var users = mockDataService.GetAllUsers();
-        var userDtos = users.Select(MapToDto);
+        var userDtos = mockDataService.GetAllUsers();
         return Ok(userDtos);
     }
 
@@ -61,58 +60,6 @@ public class UsersController(MockDataService mockDataService) : ControllerBase
             return NotFound(new { message = $"User with ID '{userId}' not found." });
 
         var activities = mockDataService.GetUserActivities(userId);
-        var activityDtos = activities.Select(MapToActivityDto);
-        return Ok(activityDtos);
-    }
-
-    /// <summary>
-    /// Maps a User entity to a UserDto.
-    /// </summary>
-    private static UserDto MapToDto(BookHive.Core.Entities.User user) => new()
-    {
-        Id = user.Id,
-        Username = user.Username,
-        DisplayName = user.DisplayName,
-        AvatarUrl = user.AvatarUrl,
-        ProfileUrl = user.ProfileUrl,
-        Location = user.Location
-    };
-
-    /// <summary>
-    /// Maps an Activity entity to an ActivityDto.
-    /// </summary>
-    private static ActivityDto MapToActivityDto(BookHive.Core.Entities.Activity activity) => new()
-    {
-        Id = activity.Id,
-        UserId = activity.UserId,
-        ActivityType = activity.ActivityType,
-        Rating = activity.Rating,
-        ActivityContent = activity.ActivityContent,
-        BookId = activity.BookId,
-        Timestamp = activity.Timestamp,
-        User = activity.User is not null ? MapToUserDto(activity.User) : null,
-        Book = activity.Book is not null ? MapToBookDto(activity.Book) : null
-    };
-
-    private static UserDto MapToUserDto(BookHive.Core.Entities.User user) => new()
-    {
-        Id = user.Id,
-        Username = user.Username,
-        DisplayName = user.DisplayName,
-        AvatarUrl = user.AvatarUrl,
-        ProfileUrl = user.ProfileUrl,
-        Location = user.Location
-    };
-
-    private static BookDto MapToBookDto(BookHive.Core.Entities.Book book) => new()
-    {
-        Id = book.Id,
-        Title = book.Title,
-        Description = book.Description,
-        BookImageUrl = book.BookImageUrl,
-        Author = book.Author,
-        Publisher = book.Publisher,
-        ListName = book.ListName,
-        ListNameEncoded = book.ListNameEncoded
-    };
+        return Ok(activities);
+    }  
 }

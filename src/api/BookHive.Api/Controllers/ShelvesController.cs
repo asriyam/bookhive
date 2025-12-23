@@ -1,5 +1,5 @@
+using BookHive.Api.Services;
 using BookHive.Core.DTOs;
-using BookHive.Infrastructure.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BookHive.Api.Controllers;
@@ -9,8 +9,8 @@ namespace BookHive.Api.Controllers;
 /// Provides endpoints for retrieving shelves and user-specific shelf information.
 /// </summary>
 [ApiController]
-[Route("api/[controller]")]
-public class ShelvesController(MockDataService mockDataService) : ControllerBase
+[Route("api/v1/[controller]")]
+public class ShelvesController(ShelvesService _shelvesService, UsersService _userService) : ControllerBase
 {
     /// <summary>
     /// Gets all available shelves in the system.
@@ -21,9 +21,8 @@ public class ShelvesController(MockDataService mockDataService) : ControllerBase
     [Produces("application/json")]
     public ActionResult<IEnumerable<ShelfDto>> GetAllShelves()
     {
-        var shelves = mockDataService.GetAllShelves();
-        var shelfDtos = shelves.Select(MapToDto);
-        return Ok(shelfDtos);
+        var shelves = _shelvesService.GetAllShelves();
+        return Ok(shelves);
     }
 
     /// <summary>
@@ -38,24 +37,13 @@ public class ShelvesController(MockDataService mockDataService) : ControllerBase
     public ActionResult<IEnumerable<ShelfDto>> GetUserShelves(string userId)
     {
         // Verify user exists
-        var user = mockDataService.GetUserById(userId);
+        var user = _userService.GetUserById(userId);
         if (user is null)
             return NotFound(new { message = $"User with ID '{userId}' not found." });
 
-        var shelves = mockDataService.GetUserShelves(userId);
-        var shelfDtos = shelves.Select(MapToDto);
-        return Ok(shelfDtos);
+        var shelves = _shelvesService.GetUserShelves(userId);
+        return Ok(shelves);
     }
 
-    /// <summary>
-    /// Maps a Shelf entity to a ShelfDto.
-    /// </summary>
-    private static ShelfDto MapToDto(BookHive.Core.Entities.Shelf shelf) => new()
-    {
-        Id = shelf.Id,
-        Name = shelf.Name,
-        Slug = shelf.Slug,
-        Count = shelf.Count,
-        IsCurated = shelf.IsCurated
-    };
+  
 }
